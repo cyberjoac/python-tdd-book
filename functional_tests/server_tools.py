@@ -1,6 +1,8 @@
-from fabric.api import run
+from fabric.api import run, env
 from fabric.context_managers import settings, shell_env
 
+env.user = 'joachimhagege'
+env.key_filename = '~/.ssh/google_compute_engine'
 
 def _get_manage_dot_py(host):
     return f'~/sites/{host}/virtualenv/bin/python ~/sites/{host}/manage.py'
